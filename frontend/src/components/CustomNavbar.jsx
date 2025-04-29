@@ -123,19 +123,23 @@ const Navbar=()=>{
         {/* Center Logo */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:block">
           <a href="/">
-            <div className="h-12 w-12 md:h-16 md:w-16 rounded-full border border-gray-200 bg-white flex items-center justify-center overflow-hidden">
-              <img src={logo} alt="Nature Thread Logo" className="hidden" style={{width:"500px"}} />
-              <div className="text-center text-xs">
-                <div className="font-medium text-green-600">NATURE</div>
-                <div className="font-medium text-green-600">THREAD</div>
-                <div className="mt-1 text-[8px]">®</div>
-              </div>
+            <div className="h-20 w-20 md:h-20 md:w-22 rounded-full flex items-center justify-center overflow-hidden">
+              <img src="/NT-logo.png" alt="Nature Thread Logo" className="w-full h-full object-contain" />
+              
             </div>
           </a>
         </div>
+
+
         
         {/* Right Navigation - Adjusted for responsive */}
+        
+        
         <div className="flex items-center space-x-6">
+
+
+
+            
           {/* Cart Price - Always visible */}
           <div className="text-sm">
             2 / ₹1,848.99
