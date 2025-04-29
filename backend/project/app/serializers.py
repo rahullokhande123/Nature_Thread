@@ -1,6 +1,7 @@
 from rest_framework import serializers
-from .models import MyInputes
+from .models import FirstCaro
 
-class MyInputesSerializers(serializers.ModelSerializer):
-    model=MyInputes
-    fields=['id','name','position']
+class FirstCaroSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = FirstCaro
+        fields = '__all__' 

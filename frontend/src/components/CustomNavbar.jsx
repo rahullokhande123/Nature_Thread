@@ -70,17 +70,17 @@ const Navbar=()=>{
         </div>
         
         {/* Left Navigation - Hidden on mobile, visible on lg screens */}
-        <div className="hidden lg:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center space-x-6 text-black">
           {/* Home Link with active state */}
-          <a href="/" className="group relative text-sm font-medium hover:text-gray-500">
+          <a href="/" className="group relative text-sm font-medium hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
             <div className="pb-1">Home</div>
             <div className="absolute bottom-0 left-0 h-0.5 w-full bg-black transition-all duration-300"></div>
           </a>
           
           {/* Shop Dropdown */}
           <div className="relative" onMouseEnter={() => setIsShopOpen(true)} onMouseLeave={() => setIsShopOpen(false)}>
-            <a href="/shop" className="group relative text-sm hover:text-gray-500">
-              <div className="flex items-center pb-1">
+            <a href="/shop" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
+              <div className="flex items-center pb-1 ">
                 Shop
                 <ChevronDown size={16} className="ml-1" />
               </div>
@@ -91,30 +91,30 @@ const Navbar=()=>{
             {isShopOpen && (
               <div className="absolute left-0 top-full z-50 w-40 bg-white shadow-md">
                 <div className="flex flex-col py-2">
-                  <a href="/shop/women" className="px-4 py-2 text-sm hover:bg-gray-100">Women</a>
-                  <a href="/shop/men" className="px-4 py-2 text-sm hover:bg-gray-100">Men</a>
-                  <a href="/shop/kids" className="px-4 py-2 text-sm hover:bg-gray-100">Kids</a>
-                  <a href="/shop/personal-care" className="px-4 py-2 text-sm hover:bg-gray-100">Personal Care</a>
-                  <a href="/shop/thermal" className="px-4 py-2 text-sm hover:bg-gray-100">Thermal</a>
+                  <a href="/shop/women" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Women</a>
+                  <a href="/shop/men" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black ">Men</a>
+                  <a href="/shop/kids" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Kids</a>
+                  <a href="/shop/personal-care" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Personal Care</a>
+                  <a href="/shop/thermal" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Thermal</a>
                 </div>
               </div>
             )}
           </div>
           
           {/* Blog Link */}
-          <a href="/blog" className="group relative text-sm hover:text-gray-500">
+          <a href="/blog" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
             <div className="pb-1">Blog</div>
             <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-all duration-300 group-hover:w-full"></div>
           </a>
           
           {/* Contact Us Link */}
-          <a href="/contact-us" className="group relative text-sm hover:text-gray-500">
+          <a href="/contact-us" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
             <div className="pb-1">Contact Us</div>
             <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-all duration-300 group-hover:w-full"></div>
           </a>
           
           {/* About Us Link */}
-          <a href="/about-us" className="group relative text-sm hover:text-gray-500">
+          <a href="/about-us" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
             <div className="pb-1">About Us</div>
             <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-all duration-300 group-hover:w-full"></div>
           </a>
@@ -137,8 +137,31 @@ const Navbar=()=>{
         
         <div className="flex items-center space-x-6">
 
-
-
+          
+        <div className="flex items-center space-x-4">
+            <div className="relative" onMouseEnter={() => setIsAccountOpen(true)} onMouseLeave={() => setIsAccountOpen(false)}>
+              <a href="/account" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
+                <div className="pb-1">My Account</div>
+                <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-all duration-300 group-hover:w-full"></div>
+              </a>
+              
+              {/* My Account Dropdown Menu */}
+              {isAccountOpen && (
+                <div className="absolute right-0 top-full z-50 w-40 bg-white shadow-md">
+                  <div className="flex flex-col py-2">
+                    <a href="/account/dashboard" className="px-4 py-2 text-sm hover:bg-gray-100 text-black" style={{textDecoration:"none"}}>Dashboard</a>
+                    <a href="/account/orders" className="px-4 py-2 text-sm hover:bg-gray-100 text-black " style={{textDecoration:"none"}}>Orders</a>
+                    <a href="/account/downloads" className="px-4 py-2 text-sm hover:bg-gray-100 text-black" style={{textDecoration:"none"}}>Downloads</a>
+                    <a href="/account/addresses" className="px-4 py-2 text-sm hover:bg-gray-100 text-black" style={{textDecoration:"none"}}>Addresses</a>
+                    <a href="/account/wallet" className="px-4 py-2 text-sm hover:bg-gray-100 text-black" style={{textDecoration:"none"}}>My Wallet</a>
+                    <a href="/account/details" className="px-4 py-2 text-sm hover:bg-gray-100 text-black" style={{textDecoration:"none"}}>Account details</a>
+                    <a href="/account/wishlist" className="px-4 py-2 text-sm hover:bg-gray-100 text-black" style={{textDecoration:"none"}}>Wishlist</a>
+                    <a href="/logout" className="px-4 py-2 text-sm hover:bg-gray-100 text-black" style={{textDecoration:"none"}}>Logout</a>
+                  </div>
+                </div>
+              )}
+            </div>
+            </div>
             
           {/* Cart Price - Always visible */}
           <div className="text-sm">
@@ -149,7 +172,7 @@ const Navbar=()=>{
       
       {/* Mobile Menu - Only visible when toggled */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-30 lg:hidden">
+        <div className="fixed inset-0 z-50  bg-opacity-80 lg:hidden">
           <div 
             ref={mobileMenuRef}
             className="absolute left-0 top-0 h-full w-1/2 bg-white overflow-hidden"
@@ -174,19 +197,19 @@ const Navbar=()=>{
             {activeTab === 'menu' && (
               <div className="h-full overflow-y-auto pb-20">
                 <div className="flex flex-col">
-                  <a href="/" className="border-b border-gray-200 px-4 py-4 font-medium">HOME</a>
-                  <a href="/shop" className="border-b border-gray-200 px-4 py-4 font-medium">SHOP</a>
-                  <a href="/blog" className="border-b border-gray-200 px-4 py-4 font-medium">BLOG</a>
-                  <a href="/about-us" className="border-b border-gray-200 px-4 py-4 font-medium">ABOUT US</a>
-                  <a href="/contact-us" className="border-b border-gray-200 px-4 py-4 font-medium">CONTACT US</a>
+                  <a href="/" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>HOME</a>
+                  <a href="/shop" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>SHOP</a>
+                  <a href="/blog" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>BLOG</a>
+                  <a href="/about-us" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}} >ABOUT US</a>
+                  <a href="/contact-us" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>CONTACT US</a>
                   
-                  <a href="/wishlist" className="border-b border-gray-200 px-4 py-4 font-medium flex items-center">
-                    <Heart size={18} className="mr-2" />
+                  <a href="/wishlist" className="border-b border-gray-200 px-4 py-4 font-medium flex items-center text-black" style={{textDecoration:"none"}}>
+                    {/* <Heart size={18} className="mr-2" /> */}
                     WISHLIST
                   </a>
                   
-                  <a href="/compare" className="border-b border-gray-200 px-4 py-4 font-medium flex items-center">
-                    <BarChart2 size={18} className="mr-2" />
+                  <a href="/compare" className="border-b border-gray-200 px-4 py-4 font-medium flex items-center text-black" style={{textDecoration:"none"}}>
+                    {/* <BarChart2 size={18} className="mr-2" /> */}
                     COMPARE
                   </a>
                   
@@ -208,14 +231,14 @@ const Navbar=()=>{
                     
                     {isAccountOpen && (
                       <div className="flex flex-col pb-2">
-                        <a href="/account/dashboard" className="py-2 pl-8 text-gray-600">Dashboard</a>
-                        <a href="/account/orders" className="py-2 pl-8 text-gray-600">Orders</a>
-                        <a href="/account/downloads" className="py-2 pl-8 text-gray-600">Downloads</a>
-                        <a href="/account/addresses" className="py-2 pl-8 text-gray-600">Addresses</a>
-                        <a href="/account/wallet" className="py-2 pl-8 text-gray-600">My Wallet</a>
-                        <a href="/account/details" className="py-2 pl-8 text-gray-600">Account details</a>
-                        <a href="/account/wishlist" className="py-2 pl-8 text-gray-600">Wishlist</a>
-                        <a href="/logout" className="py-2 pl-8 text-gray-600">Logout</a>
+                        <a href="/account/dashboard" className="py-2 pl-8 text-black " style={{textDecoration:"none"}}>Dashboard</a>
+                        <a href="/account/orders" className="py-2 pl-8 text-black" style={{textDecoration:"none"}}>Orders</a>
+                        <a href="/account/downloads" className="py-2 pl-8 text-black" style={{textDecoration:"none"}} >Downloads</a>
+                        <a href="/account/addresses" className="py-2 pl-8 text-black" style={{textDecoration:"none"}}>Addresses</a>
+                        <a href="/account/wallet" className="py-2 pl-8 text-black" style={{textDecoration:"none"}}>My Wallet</a>
+                        <a href="/account/details" className="py-2 pl-8 text-black" style={{textDecoration:"none"}}>Account details</a>
+                        <a href="/account/wishlist" className="py-2 pl-8 text-black" style={{textDecoration:"none"}}>Wishlist</a>
+                        <a href="/logout" className="py-2 pl-8 text-black" style={{textDecoration:"none"}}>Logout</a>
                       </div>
                     )}
                   </div>
@@ -227,11 +250,11 @@ const Navbar=()=>{
             {activeTab === 'categories' && (
               <div className="h-full overflow-y-auto pb-20">
                 <div className="flex flex-col">
-                  <a href="/shop/women" className="border-b border-gray-200 px-4 py-4 font-medium">WOMEN</a>
-                  <a href="/shop/men" className="border-b border-gray-200 px-4 py-4 font-medium">MEN</a>
-                  <a href="/shop/kids" className="border-b border-gray-200 px-4 py-4 font-medium">KIDS</a>
-                  <a href="/shop/personal-care" className="border-b border-gray-200 px-4 py-4 font-medium">PERSONAL CARE</a>
-                  <a href="/shop/thermal" className="border-b border-gray-200 px-4 py-4 font-medium">THERMAL</a>
+                  <a href="/shop/women" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>WOMEN</a>
+                  <a href="/shop/men" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>MEN</a>
+                  <a href="/shop/kids" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>KIDS</a>
+                  <a href="/shop/personal-care" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>PERSONAL CARE</a>
+                  <a href="/shop/thermal" className="border-b border-gray-200 px-4 py-4 font-medium text-black" style={{textDecoration:"none"}}>THERMAL</a>
                 </div>
               </div>
             )}
