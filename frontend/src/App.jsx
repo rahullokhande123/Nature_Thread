@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from "axios";
 import Navbar from "./components/CustomNavbar";
+import Home from "./Pages/Home";
 
 const App=()=>{
 
@@ -25,12 +26,16 @@ const App=()=>{
   return(
     <>
     <Navbar/><br />
-    <div align="center">
+    {/* <div align="center">
       Name <input type="text" name="name" value={input.name} onChange={handlechange} /> <br />
       Position <input type="text" name="position" value={input.position} onChange={handlechange} /> <br />
-      <button onClick={handlClick}>Submit</button>
-    </div>
+      <button onClick={handlClick}>Submit</button> 
+
+      <Home/>
+    </div> */}
+    <Home/>
     </>
+    
   )
 }
 export default App;
