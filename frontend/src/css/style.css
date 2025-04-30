@@ -6,3 +6,64 @@
   width: 100%;
 
 }
+        .carousel-inner .carousel-item2-end,
+        .carousel-inner .carousel-item2-start { 
+            transform: translateX(0);
+        }
+        
+        .carousel-item {
+            transition: transform 1s ease-in-out;
+        }
+        
+        .carousel-inner .active.carousel-item-start,
+        .carousel-inner .carousel-item-prev:not(.carousel-item-end) {
+            transform: translateX(-33.333%);
+        }
+        
+        .carousel-inner .active.carousel-item-end,
+        .carousel-inner .carousel-item-next:not(.carousel-item-start) {
+            transform: translateX(33.333%);
+        }
+        
+        .carousel-inner2 .carousel-item2-next,
+        .carousel-inner2 .carousel-item2-prev,
+        .carousel-inner2 .carousel-item2.active {
+            display: flex;
+        }
+
+        /* Custom styles for the content section */
+        .content-section {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        /* Making the carousel the same height as the content section */
+        .carousel-container {
+            padding: 2rem 0;
+        }
+
+        .carousel-item2 img {
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .carousel-item img {
+          max-height: 550px;
+          /* object-fit: cover; */
+      }
+
+        /* Responsive adjustments */
+        @media (max-width: 767.98px) {
+            .content-section {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .carousel-container {
+                padding: 1rem 0;
+            }
+        }
+   

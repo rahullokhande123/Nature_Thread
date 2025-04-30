@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ShoppingCart, ChevronDown, X, Menu, Heart, BarChart2, User } from 'lucide-react';
 import logo from "/NT-logo.png";
+import WomansCategories from '../Pages/WomansCategories';
 const Navbar=()=>{
   // State for dropdown menus
   const [isShopOpen, setIsShopOpen] = useState(false);
@@ -79,7 +80,7 @@ const Navbar=()=>{
           
           {/* Shop Dropdown */}
           <div className="relative" onMouseEnter={() => setIsShopOpen(true)} onMouseLeave={() => setIsShopOpen(false)}>
-            <a href="/shop" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
+            <a href="/" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
               <div className="flex items-center pb-1 ">
                 Shop
                 <ChevronDown size={16} className="ml-1" />
@@ -91,7 +92,7 @@ const Navbar=()=>{
             {isShopOpen && (
               <div className="absolute left-0 top-full z-50 w-40 bg-white shadow-md">
                 <div className="flex flex-col py-2">
-                  <a href="/shop/women" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Women</a>
+                  <a href="womanscategories" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Women</a>
                   <a href="/shop/men" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black ">Men</a>
                   <a href="/shop/kids" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Kids</a>
                   <a href="/shop/personal-care" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Personal Care</a>
