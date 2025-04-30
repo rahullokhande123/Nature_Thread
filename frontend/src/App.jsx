@@ -1,31 +1,18 @@
-import { useState } from "react"
-import axios from "axios";
-import Navbar from "./components/CustomNavbar";
+import { BrowserRouter, Routes , Route } from "react-router-dom";
+
+import Layout from "./Layout";
 import Home from "./Pages/Home";
+<<<<<<< HEAD
 import Footer from "./components/Footer";
+=======
+import WomansCategories from "./Pages/WomansCategories";
+>>>>>>> 0abb4b4c3f4fa91c4fbb696f684b9054f23a9923
 
-const App=()=>{
 
-  const [input,setInput]=useState({})
-
-  const handlClick=()=>{
-    let url="http://127.0.0.1:8000";
-    axios.post(url,input).then((res)=>{
-      alert("DATA POSTED SUCCESSFULLY")
-      setInput({});
-    }).catch((err)=>{
-      console.log("Error",err);
-    })
-  }
-
-  const handlechange=(e)=>{
-    let name=e.target.name;
-    let value=e.target.value
-    setInput(values=>({...values,[name]:value}))
-  }
-
+const  App=()=>{
   return(
     <>
+<<<<<<< HEAD
     <Navbar/><br />
     {/* <div align="center">
       Name <input type="text" name="name" value={input.name} onChange={handlechange} /> <br />
@@ -36,8 +23,20 @@ const App=()=>{
     </div> */}
     <Home/>
 
+=======
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                  <Route index element={<Home/>} />
+                  <Route path="home" element={<Home/>}/>
+                  <Route path="womanscategories" element={<WomansCategories/>}/>
+                </Route>
+            </Routes>
+        
+        </BrowserRouter>
+>>>>>>> 0abb4b4c3f4fa91c4fbb696f684b9054f23a9923
     </>
-    
   )
 }
+
 export default App;

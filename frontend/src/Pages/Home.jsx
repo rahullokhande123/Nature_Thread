@@ -197,7 +197,7 @@ const Home = () => {
           <h1>Wardrobe Essentials</h1>
           <p>
             100% authentic handmade products 💎💎 ⭐Ethnic |designer wear|
-            wedding 👗 👉Worldwide order✈️ 👉💰Bank /COD
+            wedding 👗 👉Worldwide order✈ 👉💰Bank /COD
           </p>
           <div className="button">
             <button>VIEWS MORE</button>
