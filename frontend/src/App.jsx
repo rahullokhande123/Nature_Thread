@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios";
 import Navbar from "./components/CustomNavbar";
 import Home from "./Pages/Home";
+import Footer from "./components/Footer";
 
 const App=()=>{
 
@@ -34,6 +35,7 @@ const App=()=>{
       <Home/>
     </div> */}
     <Home/>
+
     </>
     
   )
