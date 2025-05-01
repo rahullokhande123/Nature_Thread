@@ -15,6 +15,7 @@ const Home = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    
   };
   const settings2 = {
     dots: true,
@@ -25,6 +26,7 @@ const Home = () => {
   };
   return (
     <>
+      <div style={{overflowX:"hidden",overflowY:"hidden"}}>
       <div className="carousel">
         <Carousel style={{ position: "relative" }}>
           <Carousel.Item>
@@ -38,12 +40,14 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </div>
+      {/* ==================== Second Caro ================= */}
       <div className="newApperal">
         <div className="leftside">
           <div className="div">
             <h4>Amazing Apperal</h4>
           </div>
         </div>
+
         <div className="rightside">
           <div className="col2">
             <Slider {...settings}>
@@ -105,7 +109,7 @@ const Home = () => {
             <Slider {...settings}>
               <div>
                 <img
-                  src="../../public/images/a1.jpg"
+                  src="5345.png"
                   height="50px"
                   width="350px"
                   alt=""
@@ -113,7 +117,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src="../../public/images/a4.jpg"
+                  src="3535353.png"
                   height="50px"
                   width="350px"
                   alt=""
@@ -121,7 +125,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src="../../public/images/a3.jpg"
+                  src="3-3-300x300-1.png"
                   height="50px"
                   width="350px"
                   alt=""
@@ -129,7 +133,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src="../../public/images/a5.jpg"
+                  src="5345.png"
                   height="50px"
                   width="350px"
                   alt=""
@@ -145,7 +149,7 @@ const Home = () => {
       <div className="shopNow">
         <img
           src="../../public/images/a6.jpg"
-          style={{ height: "400px", width: "100%" }}
+          
           alt=""
         />
       </div>
@@ -158,7 +162,7 @@ const Home = () => {
             <Slider {...settings}>
               <div>
                 <img
-                  src="../../public/images/a1.jpg"
+                  src="/PersonalCare.png"
                   height="50px"
                   width="350px"
                   alt=""
@@ -166,7 +170,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src="../../public/images/a4.jpg"
+                  src="/PersonalCare2.jpeg"
                   height="50px"
                   width="350px"
                   alt=""
@@ -174,7 +178,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src="../../public/images/a3.jpg"
+                  src="/PersonalCare3.jpeg"
                   height="50px"
                   width="350px"
                   alt=""
@@ -182,7 +186,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src="../../public/images/a5.jpg"
+                  src="/PersonalCare4.jpg"
                   height="50px"
                   width="350px"
                   alt=""
@@ -192,7 +196,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="wardobar">
+      <div className="wardobar" style={{marginTop:"5%"}}>
         <div className="left">
           <h1>Wardrobe Essentials</h1>
           <p>
@@ -232,10 +236,10 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="feature">
-        <div className="div1">
+      <div style={{textAlign:"center",marginTop:"50px"}} className="feature">
+        <div align="center" className="div1" style={{margin:"20px"}}>
           <div className="img">
-            <img src="../../public/images/a1.jpg" alt="" />
+            <img src="images/shopping.png" alt="" />
           </div>
           <div className="detail">
             <h2>Free Shipping</h2>
@@ -245,45 +249,42 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="div2">
+        <div align="center" className="div2" style={{margin:"20px"}}>
           <div className="img">
-            <img src="../../public/images/a1.jpg" alt="" />
+            <img src="images/support.png" alt="" />
           </div>
           <div className="detail">
-            <h2>Free Shipping</h2>
+            <h2>Support Team</h2>
             <p>
-              "Experience complimentary shipping on every order with a minimum
-              purchase of just 300. Start shopping now to seize the savings!"
+            "Our dedicated support team is here for you. Reach out anytime for prompt assistance and personalized solutions."
             </p>
           </div>
         </div>
-        <div className="div3">
+        <div align="center" className="div3" style={{margin:"20px"}}>
           <div className="img">
-            <img src="../../public/images/a1.jpg" alt="" />
+            <img src="/images/payments.png" alt="" />
           </div>
           <div className="detail">
-            <h2>Free Shipping</h2>
+            <h2>Online Payments</h2>
             <p>
-              "Experience complimentary shipping on every order with a minimum
-              purchase of just 300. Start shopping now to seize the savings!"
+            "Seamless online payment for your convenience and peace of mind. Trust in our secure payment gateway for hassle-free transactions."
             </p>
           </div>
         </div>
-        <div className="div4">
+        <div align="center" className="div4" style={{margin:"20px"}}>
           <div className="img">
-            <img src="../../public/images/a1.jpg" alt="" />
+            <img src="/images/protect.png" alt="" />
           </div>
           <div className="detail">
-            <h2>Free Shipping</h2>
+            <h2>Safe & Secure</h2>
             <p>
-              "Experience complimentary shipping on every order with a minimum
-              purchase of just 300. Start shopping now to seize the savings!"
+            "Rest assured, your safety and security are our top priorities. With state-of-the-art encryption ."
             </p>
           </div>
         </div>
       </div>
       <div className="article">
-        <div className="detail">
+        <div style={{textAlign:"center",marginBottom:"40px"}} className="detail">
           <h2> Our New Article</h2>
           <p>
             Commercial publishing platforms and content management systems that
@@ -293,12 +294,13 @@ const Home = () => {
         </div>
         <div className="div">
           <Slider {...settings2}>
-            <div>
+            <div className="mr-50">
               <div className="img">
-                <img src="../../public/images/d5.jpg" alt="" />
-                <div className="articleCat">
-                  <Button variant="dark">PERSONAL CARE</Button>
+              <div style={{}} className="articleCat">
+                  <Button style={{marginTop:"135%",}} variant="dark">PERSONAL CARE</Button>
                 </div>
+                <img style={{marginBottom:"5%"}} src="../../public/images/d5.jpg" alt="" />
+                
               </div>
 
               <div className="data">
@@ -314,10 +316,11 @@ const Home = () => {
             </div>
             <div>
               <div className="img">
-                <img src="../../public/images/d2.jpg" alt="" />
                 <div className="articleCat">
-                  <Button variant="dark">women</Button>
+                  <Button style={{marginTop:"250%"}} variant="dark">women</Button>
                 </div>
+                <img style={{marginBottom:"5%"}} src="../../public/images/d2.jpg" alt="" />
+                
               </div>
               <div className="data">
               <p>
@@ -331,10 +334,11 @@ const Home = () => {
             </div>
             <div>
               <div className="img">
-                <img src="../../public/images/d3.jpg" alt="" />
-                <div className="articleCat">
-                  <Button variant="dark">women</Button>
+              <div className="articleCat">
+                  <Button style={{marginTop:"250%"}} variant="dark">women</Button>
                 </div>
+                <img style={{marginBottom:"5%"}} src="../../public/images/d3.jpg" alt="" />
+                
               </div>
               <div className="data">
               <p>
@@ -348,15 +352,15 @@ const Home = () => {
             </div>
             <div>
               <div className="img">
-                <img
+              <div className="articleCat z-20">
+                  <Button style={{marginTop:"350%"}} variant="dark">Men</Button>
+                </div>
+                <img style={{marginBottom:"5%"}}
                   className="z-10"
-                  style={{ zIndex: "5" }}
                   src="../../public/images/d4.jpg"
                   alt=""
                 />
-                <div className="articleCat z-20">
-                  <Button variant="dark">Men</Button>
-                </div>
+                
               </div>
               <div className="data">
                 <p>
@@ -368,36 +372,11 @@ const Home = () => {
                 <a href="">CONTINUE READING</a>
               </div>
             </div>
-            <div>
-              <div className="img">
-                <img src="../../public/images/d1.jpg" alt="" />
-              </div>
-              <div className="data">
-                <p>
-                  The Ultimate Guide to Multani Mitti Powder: Benefits, Uses,
-                  and Tips
-                </p>
-                <p> <FaUserCircle/>  Admin , <LuMessageSquare /></p>
-                <p>introduction Multan....</p>
-                <a href="">CONTINUE READING</a>
-              </div>
-            </div>
-            <div>
-              <div className="img">
-                <img src="../../public/images/d1.jpg" alt="" />
-              </div>
-              <div className="data">
-                <p>
-                  The Ultimate Guide to Multani Mitti Powder: Benefits, Uses,
-                  and Tips
-                </p>
-                <p> <FaUserCircle/>    Admin , <LuMessageSquare /></p>
-                <p>introduction Multan....</p>
-                <a href="">CONTINUE READING</a>
-              </div>
-            </div>
+            
+            
           </Slider>
         </div>
+      </div>
       </div>
     </>
   );

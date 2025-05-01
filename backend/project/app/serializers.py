@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import FirstCaro,SecondCaro,ThirdCaro,FourthCaro,FifthCaro,WomanCategories
+from .models import FirstCaro,SecondCaro,ThirdCaro,FourthCaro,FifthCaro,WomanCategories,ManCategories,KidsCategories,PersonalcareCategories
 
 class FirstCaroSerializers(serializers.ModelSerializer):
     class Meta:
@@ -29,4 +29,19 @@ class FifthCaroSerializers(serializers.ModelSerializer):
 class WomanCategoriesSerializers(serializers.ModelSerializer):
     class Meta:
         model = WomanCategories
+        fields ='__all__'
+
+class ManCategoriesSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = ManCategories
+        fields ='__all__'
+
+class KidsCategoriesSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = KidsCategories
+        fields ='__all__'
+
+class PersonalcareCategoriesSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = PersonalcareCategories
         fields ='__all__'

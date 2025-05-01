@@ -46,3 +46,30 @@ class WomanCategories(models.Model):
     def __str__(self):
         return self.title
     
+class ManCategories(models.Model):
+    title=models.CharField(max_length=50)
+    categorie=models.CharField(max_length=50)
+    price=models.IntegerField()
+    image=models.ImageField(upload_to='images/',blank=True,null=True)
+
+    def __str__(self):
+        return self.title
+    
+class KidsCategories(models.Model):
+    title=models.CharField(max_length=50)
+    categorie=models.CharField(max_length=50)
+    price=models.IntegerField()
+    image=models.ImageField(upload_to='images/',blank=True,null=True)
+
+    def __str__(self):
+        return self.title
+    
+class PersonalcareCategories(models.Model):
+    title=models.CharField(max_length=50)
+    categorie=models.CharField(max_length=50)
+    price=models.IntegerField()
+    image=models.ImageField(upload_to='images/',blank=True,null=True)
+
+    def __str__(self):
+        return self.title
+    

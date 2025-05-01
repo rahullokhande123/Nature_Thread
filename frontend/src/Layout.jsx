@@ -1,6 +1,7 @@
 
 import { Link,Outlet } from 'react-router-dom';
 import Navbar from './components/CustomNavbar';
+import Footer from './components/Footer';
 
 
 const Layout=()=>{
@@ -11,8 +12,8 @@ const Layout=()=>{
       
          <Outlet/>
       
+      <Footer/>
       
-      <div className='footer' style={{textAlign:"center",paddingTop:"20px",paddingBottom:"20px",backgroundColor:"black"}}><h1 style={{color:"white"}}>This Is Footer Section</h1></div>
       </>
      )
 }

@@ -1,8 +1,10 @@
 
 import { useState, useEffect, useRef } from 'react';
-import { ShoppingCart, ChevronDown, X, Menu, Heart, BarChart2, User } from 'lucide-react';
+import { ShoppingCart, ChevronDown, X, Menu, Heart, BarChart2, User, Badge } from 'lucide-react';
 import logo from "/NT-logo.png";
 import WomansCategories from '../Pages/WomansCategories';
+import { useSelector } from "react-redux";
+
 const Navbar=()=>{
   // State for dropdown menus
   const [isShopOpen, setIsShopOpen] = useState(false);
@@ -13,6 +15,26 @@ const Navbar=()=>{
   const [showCoupon, setShowCoupon] = useState(true);
   // State for active tab in mobile view
   const [activeTab, setActiveTab] = useState('menu'); // 'menu' or 'categories'
+
+  const [price, setPrice] = useState(0);
+
+  const getdata = useSelector((state) => state.mycart.cart);
+
+  // Function to calculate total price
+  const total = () => {
+    let totalPrice = 0;
+    getdata.forEach(item => {
+      totalPrice += item.price * item.qnty;
+    });
+    setPrice(totalPrice);
+  };
+
+  // Run total calculation every time cart changes
+  useEffect(() => {
+    total();
+  }, [getdata]);
+
+
   
   // Ref for the mobile menu
   const mobileMenuRef = useRef(null);
@@ -93,29 +115,28 @@ const Navbar=()=>{
               <div className="absolute left-0 top-full z-50 w-40 bg-white shadow-md">
                 <div className="flex flex-col py-2">
                   <a href="womanscategories" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Women</a>
-                  <a href="/shop/men" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black ">Men</a>
-                  <a href="/shop/kids" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Kids</a>
-                  <a href="/shop/personal-care" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Personal Care</a>
-                  <a href="/shop/thermal" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Thermal</a>
+                  <a href="mancategories" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black ">Men</a>
+                  <a href="kidscategories" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Kids</a>
+                  <a href="personalcategories" style={{textDecoration:"none"}} className="px-4 py-2 text-sm hover:bg-gray-100 text-black">Personal Care</a>
                 </div>
               </div>
             )}
           </div>
           
           {/* Blog Link */}
-          <a href="/blog" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
+          <a href="blog" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
             <div className="pb-1">Blog</div>
             <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-all duration-300 group-hover:w-full"></div>
           </a>
           
           {/* Contact Us Link */}
-          <a href="/contact-us" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
+          <a href="contact" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
             <div className="pb-1">Contact Us</div>
             <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-all duration-300 group-hover:w-full"></div>
           </a>
           
           {/* About Us Link */}
-          <a href="/about-us" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
+          <a href="about" className="group relative text-sm hover:text-gray-500 text-black" style={{textDecoration:"none"}}>
             <div className="pb-1">About Us</div>
             <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-black transition-all duration-300 group-hover:w-full"></div>
           </a>
@@ -166,7 +187,10 @@ const Navbar=()=>{
             
           {/* Cart Price - Always visible */}
           <div className="text-sm">
-            2 / ₹1,848.99
+            <a style={{textDecoration:"none",color:"black"}} href="cart">
+                
+              <span className="ms-2">{getdata.length} / ₹{price.toFixed(2)}</span>
+            </a>
           </div>
         </div>
       </nav>
