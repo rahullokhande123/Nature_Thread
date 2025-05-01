@@ -67,7 +67,7 @@ const PersonalCategories = () => {
                     <h6 className="text-success fw-bold">Price: ₹{item.price}</h6>
                 </div>
                 <div className="card-footer bg-white border-top-0">
-                    <a href="/">
+                    <a href="#">
                         <button type="button" className="btn btn-outline-success w-100" onClick={()=>{DataCart(item.id, item.title, item.image, item.categorie, item.price)}}>
                             Add To Cart
                         </button>
