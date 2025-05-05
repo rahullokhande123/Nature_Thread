@@ -22,7 +22,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="bg-white w-full">
+    <div className="bg-white w-full" style={{marginBottom:"2%"}}>
       <div className="bg-black text-white text-center py-4 mb-6">
         <h1 className="text-2xl sm:text-3xl md:text-4xl">Blog</h1>
       </div>

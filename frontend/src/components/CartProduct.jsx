@@ -4,6 +4,7 @@ import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import { X } from "lucide-react";
 
 const CartProduct = () => {
   const [show, setShow] = useState(false);
@@ -94,10 +95,10 @@ const CartProduct = () => {
                     </td>
                     <td className="p-2">₹{item.price * item.qnty}</td>
                     <td className="p-2">
-                      <button
-                        className="bg-gray-600 text-white text-xs px-2 py-1 rounded"
-                        onClick={() => cartRecDel(item.id)}
-                      >Delete</button>
+                      
+
+                      <X className="bg-gray-600 text-white text-xs  py-1 rounded"
+                        onClick={() => cartRecDel(item.id)}></X>
                     </td>
                   </tr>
                 );
